@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        button{
+            width: 50px;
+            height: 20px;
+        }
+    </style>
+</head>
+<body>
+    <input type="text"><button>查询</button>
+    <script>
+        var btn=document.querySelector("button");
+        var text=document.querySelector("input");
+
+        //开启的默认数据
+        var xhr1=new XMLHttpRequest();
+            text.value="北京";
+            xhr1.open('get','https://geoapi.qweather.com/v2/city/lookup?key=15b085fcfe9d42c6b60071ac519ac612&location='+text.value,true);
+            xhr1.onreadystatechange=function(){
+                if(xhr1.readyState==4&&xhr1.status==200){
+                    var text=xhr1.responseText;
+                    var jsonobj = JSON.parse(text);
+                    console.log(jsonobj);
+                    var toCntPercent = jsonobj.location[0].id;
+                    console.log(toCntPercent);
+                    //return xhr1.responseText.match(/"id":"\d{9}"/)[0].match(/\d{9}/)[0];
+                }
+                    var xhr=new XMLHttpRequest();
+                    xhr.open('get','https://devapi.qweather.com/v7/weather/3d?key=15b085fcfe9d42c6b60071ac519ac612&location='+toCntPercent,true);
+                    xhr.onreadystatechange=function(){
+                        if(xhr.readyState==4&&xhr.status==200){
+                            var text1=xhr.responseText;
+                            var jsonobj1 = JSON.parse(text1).daily;
+                            console.log(jsonobj1);
+                        }
+
+                        //part1
+                        var small=document.querySelector(".small");
+                        small.innerHTML=jsonobj1[0].textDay;
+
+                        var realtemp=document.querySelector(".realtemp");
+                        realtemp.innerHTML=jsonobj1[0].tempMax;
+
+                        var wind=document.querySelector(".wind");    
+                        wind.innerHTML=jsonobj1[0].windDirDay+""+jsonobj1[0].windScaleDay+" 湿度"+jsonobj1[0].windScaleNight+"%";
+
+                        var care=document.querySelector(".care");
+                        if(jsonobj1[0].textDa<=0){
+                            care.innerHTML="天寒地冻穿暖和的吧";
+                        }else if(jsonobj1[0].textDa>0&&jsonobj1[0].textDa<10){
+                            care.innerHTML="天气阴冷穿暖和点吧";
+                        }else if(jsonobj1[0].textDa>17){
+                            care.innerHTML="冷热适宜，感觉很舒服";
+                        }else{
+                            care.innerHTML="略微偏凉，还是蛮舒适的";
+                        }
+
+                        
+                        
+                    }
+                    xhr.send();
+
+
+                    //part1
+                    var xhr2=new XMLHttpRequest();
+                    xhr2.open('get','https://devapi.qweather.com/v7/weather/3d?key=15b085fcfe9d42c6b60071ac519ac612&location='+toCntPercent,true);
+                    xhr2.onreadystatechange=function(){
+                        if(xhr2.readyState==4&&xhr2.status==200){
+                            var text2=xhr.responseText;
+                            var jsonobj2 = JSON.parse(text2).station;
+                            console.log(jsonobj2);
+                        }
+                        var pm10=0;
+                        for(i=0;i<jsonobj2.length;i++){
+                            pm10+=jsonobj2[i];
+                        }
+                        var airindex=document.querySelector(".airindex");
+                        airindex.innerHTML=pm10/jsonobj2.length+" "+jsonobj2.category;
+                    }
+                    xhr.send();
+                }
+                xhr1.send();
+
+
+
+
+
+
+
+            //点击获得数据
+            btn.onclick=function(){
+                var xhr1=new XMLHttpRequest();
+                xhr1.open('get','https://geoapi.qweather.com/v2/city/lookup?key=15b085fcfe9d42c6b60071ac519ac612&location='+text.value,true);
+                xhr1.onreadystatechange=function(){
+                    if(xhr1.readyState==4&&xhr1.status==200){
+                        var text=xhr1.responseText;
+                        var jsonobj = JSON.parse(text);
+                        console.log(jsonobj);
+                        var toCntPercent = jsonobj.location[0].id;
+                        console.log(toCntPercent);
+                        //return xhr1.responseText.match(/"id":"\d{9}"/)[0].match(/\d{9}/)[0];
+
+                        var xhr=new XMLHttpRequest();
+                        xhr.open('get','https://devapi.qweather.com/v7/weather/3d?key=15b085fcfe9d42c6b60071ac519ac612&location='+toCntPercent,true);
+                        xhr.onreadystatechange=function(){
+                            if(xhr.readyState==4&&xhr.status==200){
+                                var text1=xhr.responseText;
+                                var jsonobj1 = JSON.parse(text1).daily[0];
+                                console.log(jsonobj1);
+                            }
+                        }
+                        xhr.send();
+                    }
+                }
+                xhr1.send();
+                // console.log(xhr1.onreadystatechange());
+            }   
+    </script>
+</body>
+</html>

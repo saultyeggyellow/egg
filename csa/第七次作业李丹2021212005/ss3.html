@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="main"></div>
+    <script>
+        // import * as echarts from 'echarts';
+
+        // // 基于准备好的dom，初始化echarts实例
+        // var myChart = echarts.init(document.getElementById('main'));
+        // // 绘制图表
+        // myChart.setOption({
+        // title: {
+        //     text: 'ECharts 入门示例'
+        // },
+        // tooltip: {},
+        // xAxis: {
+        //     data: ['衬衫', '羊毛衫', '雪纺衫', '裤子', '高跟鞋', '袜子']
+        // },
+        // yAxis: {},
+        // series: [
+        //     {
+        //     name: '销量',
+        //     type: 'bar',
+        //     data: [5, 20, 36, 10, 10, 20]
+        //     }
+        // ]
+        // });
+        
+        var xhr2=new XMLHttpRequest();
+        xhr5.open('get','https://devapi.qweather.com/v7/indices/1d?key=15b085fcfe9d42c6b60071ac519ac612&location='+toCntPercent+"type=0",true);
+        xhr5.onreadystatechange=function(){
+            if(xhr5.readyState==4&&xhr5.status==200){
+                var text5=xhr.responseText;
+                var jsonobj5 = JSON.parse(text1);
+
+
+                var h1=document.querySelector("#five>li:nth-of-type(1)>em");
+                h1.innerHTML="约会 适宜";
+
+                var h2=document.querySelector("#five>li:nth-of-type(2)>em");
+                h2.innerHTML="美发 较不适宜";
+
+                var h3=document.querySelector("#five>li:nth-of-type(3)>em");
+                h3.innerHTML="舒适度 "+jsonobj5[7].category;
+
+                var h4=document.querySelector("#five>li:nth-of-type(4)>em");
+                h4.innerHTML="路况 "+jsonobj5[9].category;
+
+                var h5=document.querySelector("#five>li:nth-of-type(5)>em");
+                h5.innerHTML="运动 "+jsonobj5[0].category;
+
+                var h6=document.querySelector("#five>li:nth-of-type(6)>em");
+                h6.innerHTML="逛街 "+jsonobj5[5].category;
+
+                var h7=document.querySelector("#five>li:nth-of-type(7)>em");
+                h7.innerHTML="钓鱼 "+jsonobj5[5].category;
+
+                var h8=document.querySelector("#five>li:nth-of-type(8)>em");
+                h8.innerHTML="防晒 "+jsonobj5[5].category;
+
+                var h9=document.querySelector("#five>li:nth-of-type(9)>em");
+                h9.innerHTML="雨伞 "+jsonobj5[7].category;
+
+                var h10=document.querySelector("#five>li:nth-of-type(10)>em");
+                h10.innerHTML="风寒 "+jsonobj5[2].category;
+
+                var h11=document.querySelector("#five>li:nth-of-type(11)>em");
+                h11.innerHTML="心情 "+jsonobj5[14].category;
+
+                var h12=document.querySelector("#five>li:nth-of-type(12)>em");
+                h12.innerHTML="猫咪 "+jsonobj5[7].category;
+
+                var h13=document.querySelector("#five>li:nth-of-type(13)>em");
+                h13.innerHTML="感冒 "+jsonobj5[8].category;
+
+                var h14=document.querySelector("#five>li:nth-of-type(14)>em");
+                h14.innerHTML="狗狗 "+jsonobj5[13].category;
+
+                var h15=document.querySelector("#five>li:nth-of-type(15)>em");
+                h15.innerHTML="广场舞" +jsonobj5[5].category;
+
+                var h16=document.querySelector("#five>li:nth-of-type(16)>em");
+                h16.innerHTML="放风筝 "+jsonobj5[7].category;
+
+                var h17=document.querySelector("#five>li:nth-of-type(17)>em");
+                h17.innerHTML="旅游 "+jsonobj5[5].category;
+
+                var h18=document.querySelector("#five>li:nth-of-type(18)>em");
+                h18.innerHTML="晨练 "+jsonobj5[5].category;
+
+                var h19=document.querySelector("#five>li:nth-of-type(19)>em");
+                h19.innerHTML="防晒 "+jsonobj5[13].category;
+
+                var h20=document.querySelector("#five>li:nth-of-type(20)>em");
+                h20.innerHTML="洗车 "+jsonobj5[1].category;
+
+                var h21=document.querySelector("#five>li:nth-of-type(21)>em");
+                h21.innerHTML="空气污染扩散 "+jsonobj5[9].category;
+
+                var h22=document.querySelector("#five>li:nth-of-type(22)>em");
+                h22.innerHTML="空调开启 "+jsonobj5[10].category;
+
+                var h23=document.querySelector("#five>li:nth-of-type(23)>em");
+                h23.innerHTML="息斯敏过敏 "+jsonobj5[6].category;
+
+                var h24=document.querySelector("#five>li:nth-of-type(24)>em");
+                h24.innerHTML="中暑 防护"+jsonobj5[11].category;
+
+                var h25=document.querySelector("#five>li:nth-of-type(25)>em");
+                h25.innerHTML="交通 "+jsonobj5[14].category;
+
+                var h26=document.querySelector("#five>li:nth-of-type(26)>em");
+                h26.innerHTML="划船 "+jsonobj5[5].category;
+
+                var h27=document.querySelector("#five>li:nth-of-type(27)>em");
+                h27.innerHTML="化妆 "+jsonobj5[12].category;
+
+                var h28=document.querySelector("#five>li:nth-of-type(28)>em");
+                h28.innerHTML="啤酒 不适宜";
+
+                var h29=document.querySelector("#five>li:nth-of-type(29)>em");
+                h29.innerHTML="夜生活 适宜";
+
+                var h30=document.querySelector("#five>li:nth-of-type(30)>em");
+                h30.innerHTML="穿衣 "+jsonobj5[2].category;
+
+                var h31=document.querySelector("#five>li:nth-of-type(31)>em");
+                h31.innerHTML="紫外线 "+jsonobj5[4].category;
+
+            }
+                        
+        }
+        xhr2.send();
+
+
+
+
+
+        
+    </script>
+</body>
+</html>

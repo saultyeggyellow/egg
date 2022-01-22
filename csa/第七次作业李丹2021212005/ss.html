@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8"/>
+		<meta name="viewport" content="width=device-width"/>
+		<title>搜索历史记录的使用</title>
+		
+        <style>
+            body{
+                margin:0;
+                padding:0;
+                font-family:"Helvetica","Microsoft Yahei";
+            }
+            
+            ul,li,p{
+                padding:0;
+                margin:0;
+            }
+            input{
+                border:none;
+            }
+            
+            
+            .search-container{
+                position:relative;
+                width:100%;
+                overflow:hidden;
+                height:40px;
+                background-color:#d2d1d1;
+            }
+            .search-box{
+                width:60%;
+                height:30px;
+                margin:5px auto;
+                
+            }
+            
+            .search-box input{
+                width:100%;
+                height:30px;
+                border:1px solid #979ca0;
+                border-radius:10px;
+                outline:none;
+            }
+            
+            .search-btn{
+                position:absolute;
+                height:40px;
+                line-height:40px;
+                right:6%;
+                top:0;
+                text-align:center;
+                color:white;
+            }
+            
+            /*历史记录*/
+            
+            
+            .search-history p{
+                font-size:14px;
+                height:30px;
+                line-height:30px;
+                width:70%;
+                padding-left:5%;
+                float:left;
+                box-sizing:border-box;
+            }
+            
+            .clear-history{
+                width:30%;
+                float:left;
+                height:30px;
+                background-image:url("./trash.png");
+                background-repeat:no-repeat;
+                background-size:15px 15px;
+                background-position:center;
+            }
+            
+            ul.search-history-list{
+                padding:0 10px;
+                clear:left;
+                font-size:14px;
+                color:grey;
+            }
+            
+            ul.search-history-list li{
+                list-style:none;
+                width:100%;
+                height:30px;
+                line-height:30px;
+            
+                border-bottom:1px solid #eaeaea;
+            }
+ 
+ 
+        </style>
+	</head>
+ 
+	<body>
+		<div class="search-container">
+			<div class="search-box">
+				<input type="text" name="search" id="search"/>
+			</div>
+ 
+			<div class="search-btn">
+				搜索
+			</div>
+		</div>
+ 
+		<div class="search-history">
+			<p>
+				历史搜索:
+			</p>
+ 
+			<div class="clear-history">
+			</div>
+			<ul class="search-history-list">
+			</ul>
+		</div>
+		
+        <script>
+            function search(){
+                $(".search-btn").click(function(){
+                    searchHistory($("#search").val());
+                    console.log(localStorage);
+                });
+            }
+            search();
+            
+            function searchHistory(search_value){
+                var len=5;  //设定存储的历史记录个数
+                if(search_value!=""&&
+                    !judgeRepeat(search_value))
+                {
+                    insertToHistoryList(search_value,len);
+                    if(localStorage.length<len)//0 1 2 3 4
+                    {
+                        localStorage.setItem(localStorage.length,search_value);
+                    }else{
+                        for(var i=0;i<len;++i)
+                        {
+                            if(i==len-1)
+                            {
+                                localStorage.setItem(i,search_value);
+                                return;
+                            }
+                            var next_value=localStorage.getItem(i+1);
+                            localStorage.setItem(i,next_value);	
+                        }
+                    }
+            
+                }
+            }
+            
+            /*如果搜索结果与本地存储相同，
+            则不行存储
+            */
+            function judgeRepeat(search_value){
+                var repeat_bool=false;
+                for(var key in localStorage)
+                {
+                    if(search_value==localStorage.getItem(key))
+                    {
+                        return true;
+                    }
+                }
+            }
+            
+            /*将搜索结果插入到历史记录中*/
+            function insertToHistoryList(search_value,len)
+            {
+                var str="<li>"+search_value+"</li>";
+                if($(".search-history-list").children().length==0)
+                {
+                    $(".search-history-list").append($(str));
+                }else
+                {
+                    if($(".search-history-list").children().length<len)
+                    {
+                        $(str).insertBefore($(".search-history-list li:eq(0)"));
+                    }else
+                    {
+                        $(".search-history-list li:last").remove();  //超过len个则移除最后一个
+                        $(str).insertBefore($(".search-history-list li:eq(0)"));
+                    }
+                }
+            }
+            
+            
+            /*初始化历史记录列表*/
+            function buildHistory(){
+                for(var i=0;i<localStorage.length;++i)
+                {
+                    
+                    var str="<li>"+localStorage.getItem(localStorage.length-1-i)+
+                        "</li>";
+                    $(str).appendTo($(".search-history-list"));
+                }
+            }
+            
+            buildHistory();
+            
+            /*清空历史搜索记录*/
+            $(".clear-history").click(function(){
+                localStorage.clear();
+                $(".search-history-list").empty();
+                console.log("History has been cleared");
+            });
+        </script>
+	</body>
+</html>

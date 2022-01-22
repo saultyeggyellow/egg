@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        let str = "I'm?���going�??�to�?�take�??�a?�trip�?�to��?daocheng�?�on��May Day.";
+        var reg=/\?[a-z]/g;
+        var reg1=/[a-z]/g;
+        var new1=str.match(reg)[0].match(reg1)[0];
+        str=str.replace(reg,new1.toUpperCase());
+        str=str.replace(/[^A-z,'']/g," ");
+        console.log(str); // 'I'm going to take a trip to Daocheng on May Day.'
+    </script>
+</head>
+<body>
+    
+</html>

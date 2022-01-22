@@ -1,0 +1,821 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/qweather-icons@1.1.0/font/qweather-icons.css">
+
+    <style>
+        *{
+            margin: 0px;
+            padding: 0px;
+        }
+        .index{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-image: url("backg.png");
+            width: 375.333px;
+            height: 1946.160px;
+            
+        }
+        .part1{
+            width: 375.333px;
+            height: 291.198px;
+            
+        }
+        .part2{
+            width: 375.333px;
+            height: 58.240px;
+        }
+        .part3{
+            width: 375.333px;
+            height: 24.958px;
+        }
+        .part4{
+            width: 355.333px;
+            height: 335.823px;
+            margin-left: 10px;
+            margin-right: 10px;
+            margin-top: 14.560px;
+            
+        }
+        .activity{
+            width: 375.333px;
+            height: 1155px;
+            border: 1px,solid,gray;
+            
+        }
+        .thing{
+            width: 375.333px;
+            height: 38px;
+            margin-top: 50px;
+            
+        }
+        .small{
+            padding-top: 50.320px;
+            width: 365.333px;
+            height: 22px;
+            padding-left: 10px;
+        }
+        .tempora{
+            width: 225.333px;
+            height: 126.865px;
+            padding-left: 10px;
+            float: left;
+        }
+        .realtemp{
+            width: auto;
+            height: 93.600px;
+            font-size: 93.6px;
+        }
+        .air1{
+            margin-top: 84px;
+            padding-top: 10px;
+            width: 100px;
+            height: 32.229px;
+            
+            float: right;
+        }
+        #air1{
+            width: 14.552;
+            height: 13.885px;
+            float: left;
+        }
+        .airindex{
+            font-size: 3px;
+            width: 85px;
+            float: right;
+        }
+        .wind{
+            width: 225.333px;
+            height: 16.635px;
+        }
+        .care{
+            width: 225.333px;
+            height: 16.635px;
+        }
+        .single{
+            width: 186.667px;
+            height: 58.240px;
+        }
+        .single1_1{
+            padding-top: 7.280px;
+            padding-right: 10px;
+            padding-left: 10px;
+            width: 166.667px;
+            height: 16.635px;
+        }
+        .single1_2{
+            padding-top: 6.240px;
+            padding-left: 10px;
+            padding-right: 10px;
+            width: 166.667px;
+            height: 20.792px;
+        }
+        /* .weather{
+            margin-left: 10px;
+            margin-right: 10px;
+            width: 355.333px;
+            height: 110px;
+        }
+        .canvas{
+            width: 355.333px;
+            height: 123px;
+        } */
+        .hard{
+            width: 62.521px;
+            height: 335.823px;
+            float: left;
+            
+            list-style: none;
+        }
+        .date{
+            width: 62.521px;
+            height: 14.552px;
+        }
+        .wea{
+            width: 62.521px;
+            height: 58.229px;
+            padding-bottom: 4px;
+        }
+        .reahard{
+            width: 62.521px;
+            height: 123px;
+        }
+        .winddir{
+            width: 62.521px;
+            height: 33.271;
+            padding-bottom: 10.4px;
+            padding-top: 13.520px;
+        }
+        #five>li{
+            width: 124.510px;
+            height: 104px;
+            float: left;
+            display: flex;
+            flex-direction: column;
+        }
+        #five>li{
+            display: flex;
+            align-items: center;
+        }
+    </style>
+</head>
+<body style="display: flex;flex-direction: column;align-items: center;">
+    <div class="index">
+    
+        <div class="part1">
+            <div class="thing">
+                <a href="https://html5.moji.com/tpd/gzbd/index.html" style="float:left;margin-left:20px;background-color: #336699;width:138px;text-align:center;font-size:14px;border-radius:18px;color:#ffffff;height:100%;text-decoration: none;vertical-align: middle;display: flex;justify-content: center;">
+                    <img src="//h5tq.moji.com/mtianqi/assets/images/yiqing/2.png" style="width:26px;margin-right:8px;height:26px;margin-top:3px;margin-bottom: 3px;">
+                    <div style="padding-top: 5px;">疫情资讯</div>
+                    
+                </a>
+                <a href="https://html5.moji.com/tpd/safetravel/safetravel.html?t=1580984067263" style="float:right;margin-right:20px;background-color: #336699;width:138px;text-align:center;font-size:14px;border-radius:18px;color:#ffffff;display:inline-block;height:100%; text-decoration: none;vertical-align: middle;display: flex;justify-content: center;">
+                    <img src="//h5tq.moji.com/mtianqi/assets/images/yiqing/1.png" style="width:26px;margin-right:8px;height:26px;margin-top:3px;margin-bottom: 3px;">
+                    <div style="padding-top: 5px;">安全出行</div>
+                </a>
+            </div>
+            <div class="small">
+                阴
+            </div>
+            <div class="tempora">
+                <div class="realtemp">7</div>
+                <p class="wind">嘿嘿</p>
+                <p class="care">哈哈</p>
+            </div>
+            <div class="air1">
+                <a style="background-color: #336699;text-decoration: none;color: #ffffff;" href="http://m.moji.com/aqi/china/guangdong/guangzhou">
+                    <img id="air1" class="air" src="http://h5tq.moji.com/mtianqi/assets/images/aqi/1.png" alt="">
+                    <div class="airindex">呼呼</div>
+                </a>
+                
+            </div>
+        </div>
+        <div class="part2">
+            <div class="single" style="float: left;">
+                <div id="s1" class="single1_1"></div>
+                <div id="s2" class="single1_2"></div>
+            </div>
+            <div class="single" style="float: right;">
+                <div id="s3" class="single1_1"></div>
+                <div id="s4" class="single1_2"></div>
+            </div>
+        </div>
+        <div class="part3">日落
+            <div class="sunset"></div>
+        </div>
+        <div class="part4">
+            <!-- <div class="weather"></div>
+            <div class="canvas"></div> -->
+            <ul id="sohard" style="width: 375.333px;margin-left: 10px;margin-right: 10px;">
+                <li class="hard">
+                    <div class="date">星期</div>
+                    <div class="wea1">天气</div>
+                    <div class="reahard"></div>
+                    <div class="wea2">天气</div>
+                    <p style="width: 31.198px;height: 16.635px;">优</p>
+                    <div class="winddir">风</div>
+                    <div class="windscale">哇</div>
+                </li>
+                <li class="hard">
+                    <div class="date">星期</div>
+                    <div class="wea1">天气</div>
+                    <div class="reahard"></div>
+                    <div class="wea2">天气</div>
+                    <p style="width: 31.198px;height: 16.635px;">优</p>
+                    <div class="winddir">风</div>
+                    <div class="windscale">哇</div>
+                </li>
+                <li class="hard">
+                    <div class="date">星期</div>
+                    <div class="wea1">天气</div>
+                    <div class="reahard"></div>
+                    <div class="wea2">天气</div>
+                    <p style="width: 31.198px;height: 16.635px;">优</p>
+                    <div class="winddir">风</div>
+                    <div class="windscale">哇</div>
+                </li>
+                <li class="hard">
+                    <div class="date">星期</div>
+                    <div class="wea1">天气</div>
+                    <div class="reahard"></div>
+                    <div class="wea2">天气</div>
+                    <p style="width: 31.198px;height: 16.635px;">优</p>
+                    <div class="winddir">风</div>
+                    <div class="windscale">哇</div>
+                </li>
+                <li class="hard">
+                    <div class="date">星期</div>
+                    <div class="wea1">天气</div>
+                    <div class="reahard"></div>
+                    <div class="wea2">天气</div>
+                    <p style="width: 31.198px;height: 16.635px;">优</p>
+                    <div class="winddir">风</div>
+                    <div class="windscale">哇</div>
+                </li>
+                <li class="hard">
+                    <div class="date">星期</div>
+                    <div class="wea1">天气</div>
+                    <div class="reahard"></div>
+                    <div class="wea2">天气</div>
+                    <p style="width: 31.198px;height: 16.635px;">优</p>
+                    <div class="winddir">风</div>
+                    <div class="windscale">哇</div>
+                </li>
+            </ul>
+        </div>
+        <div class="activity">
+            <ul id="five">
+                <!--约会--><li>
+                    <span>
+                        <img src="//h5tq.moji.com/mtianqi/assets/images/script/default.png">
+                    </span>
+                    <em>约会 适宜</em>
+                </li>
+                <!--美发--><li>
+                    <span>
+                        <img src="//h5tq.moji.com/mtianqi/assets/images/script/default.png">
+                    </span>
+                    <em>美发 适宜</em>
+                </li>
+                <!--舒适度--><li>
+                    <span>
+                        <img src="//h5tq.moji.com/mtianqi/assets/images/script/default.png">
+                    </span>
+                    <em>约会 适宜</em>
+                </li>
+                <!--路况--><li>
+                    <span>
+                        <img src="//h5tq.moji.com/mtianqi/assets/images/script/default.png">
+                    </span>
+                    <em>约会 适宜</em>
+                </li>
+                <!--运动--><li>
+                    <span>
+                        <img src="http://h5tq.moji.com/mtianqi/assets/images/script/26.png">
+                    </span>
+                    <em>约会 适宜</em>
+                </li>
+                <!--逛街--><li>
+                    <span>
+                        <img src="//h5tq.moji.com/mtianqi/assets/images/script/default.png">
+                    </span>
+                    <em>约会 适宜</em>
+                </li>
+                <!--钓鱼--><li>
+                    <span>
+                        <img src="	http://h5tq.moji.com/mtianqi/assets/images/script/28.png">
+                    </span>
+                    <em>约会 适宜</em>
+                </li>
+                <!--防晒--><li>
+                    <span>
+                        <img src="//h5tq.moji.com/mtianqi/assets/images/script/default.png">
+                    </span>
+                    <em>约会 适宜</em>
+                </li>
+                <!--雨伞--><li>
+                    <span>
+                        <img src="//h5tq.moji.com/mtianqi/assets/images/script/default.png">
+                    </span>
+                    <em>约会 适宜</em>
+                </li>
+                <!--风寒--><li>
+                    <span>
+                        <img src="//h5tq.moji.com/mtianqi/assets/images/script/default.png">
+                    </span>
+                    <em>约会 适宜</em>
+                </li>
+                <!--心情--><li>
+                    <span>
+                        <img src="//h5tq.moji.com/mtianqi/assets/images/script/default.png">
+                    </span>
+                    <em>约会 适宜</em>
+                </li>
+                <!--猫咪--><li>
+                    <span>
+                        <img src="//h5tq.moji.com/mtianqi/assets/images/script/default.png">
+                    </span>
+                    <em>约会 适宜</em>
+                </li>
+                <!--感冒--><li>
+                    <span>
+                        <img src="http://h5tq.moji.com/mtianqi/assets/images/script/12.png">
+                    </span>
+                    <em>约会 适宜</em>
+                </li>
+                <!--狗狗--><li>
+                    <span>
+                        <img src="//h5tq.moji.com/mtianqi/assets/images/script/default.png">
+                    </span>
+                    <em>约会 适宜</em>
+                </li>
+                <!--广场舞--><li>
+                    <span>
+                        <img src="//h5tq.moji.com/mtianqi/assets/images/script/default.png">
+                    </span>
+                    <em>约会 适宜</em>
+                </li>
+                <!--放风筝--><li>
+                    <span>
+                        <img src="//h5tq.moji.com/mtianqi/assets/images/script/default.png">
+                    </span>
+                    <em>约会 适宜</em>
+                </li>
+                <!--旅游--><li>
+                    <span>
+                        <img src="//h5tq.moji.com/mtianqi/assets/images/script/default.png">
+                    </span>
+                    <em>约会 适宜</em>
+                </li>
+                <!--晨练--><li>
+                    <span>
+                        <img src="//h5tq.moji.com/mtianqi/assets/images/script/default.png">
+                    </span>
+                    <em>约会 适宜</em>
+                </li>
+                <!--防晒--><li>
+                    <span>
+                        <img src="//h5tq.moji.com/mtianqi/assets/images/script/default.png">
+                    </span>
+                    <em>约会 适宜</em>
+                </li>
+                <!--洗车--><li>
+                    <span>
+                        <img src="	http://h5tq.moji.com/mtianqi/assets/images/script/17.png">
+                    </span>
+                    <em>约会 适宜</em>
+                </li>
+                <!--空气污染扩散--><li>
+                    <span>
+                        <img src="http://h5tq.moji.com/mtianqi/assets/images/script/18.png">
+                    </span>
+                    <em>约会 适宜</em>
+                </li>
+                <!--空调开启--><li>
+                    <span>
+                        <img src="//h5tq.moji.com/mtianqi/assets/images/script/default.png">
+                    </span>
+                    <em>约会 适宜</em>
+                </li>
+                <!--息斯敏过敏--><li>
+                    <span>
+                        <img src="//h5tq.moji.com/mtianqi/assets/images/script/default.png">
+                    </span>
+                    <em>约会 适宜</em>
+                </li>
+                <!--中暑--><li>
+                    <span>
+                        <img src="//h5tq.moji.com/mtianqi/assets/images/script/default.png">
+                    </span>
+                    <em>约会 适宜</em>
+                </li>
+                <!--交通--><li>
+                    <span>
+                        <img src="http://h5tq.moji.com/mtianqi/assets/images/script/5.png">
+                    </span>
+                    <em>约会 适宜</em>
+                </li>
+                <!--划船--><li>
+                    <span>
+                        <img src="//h5tq.moji.com/mtianqi/assets/images/script/default.png">
+                    </span>
+                    <em>约会 适宜</em>
+                </li>
+                <!--化妆--><li>
+                    <span>
+                        <img src="http://h5tq.moji.com/mtianqi/assets/images/script/7.png">
+                    </span>
+                    <em>约会 适宜</em>
+                </li>
+                <!--啤酒--><li>
+                    <span>
+                        <img src="//h5tq.moji.com/mtianqi/assets/images/script/default.png">
+                    </span>
+                    <em>约会 适宜</em>
+                </li>
+                <!--夜生活--><li>
+                    <span>
+                        <img src="//h5tq.moji.com/mtianqi/assets/images/script/default.png">
+                    </span>
+                    <em>约会 适宜</em>
+                </li>
+                <!--穿衣--><li>
+                    <span>
+                        <img src="http://h5tq.moji.com/mtianqi/assets/images/script/20.png">
+                    </span>
+                    <em>约会 适宜</em>
+                </li>
+                <!--紫外线--><li>
+                    <span>
+                        <img src="http://h5tq.moji.com/mtianqi/assets/images/script/21.png">
+                    </span>
+                    <em>约会 适宜</em>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <input type="text"><button>查询</button>
+    <script>
+        var btn=document.querySelector("button");
+        var text=document.querySelector("input");
+
+
+        //获取地址编号
+        var xhr1=new XMLHttpRequest();
+            text.value="北京";
+            xhr1.open('get','https://geoapi.qweather.com/v2/city/lookup?key=15b085fcfe9d42c6b60071ac519ac612&location='+text.value,true);
+            xhr1.onreadystatechange=function(){
+                if(xhr1.readyState==4&&xhr1.status==200){
+                    var text=xhr1.responseText;
+                    var jsonobj = JSON.parse(text);
+                    console.log(jsonobj);
+                    var toCntPercent = jsonobj.location[0].id;
+                    console.log(toCntPercent);
+                    //return xhr1.responseText.match(/"id":"\d{9}"/)[0].match(/\d{9}/)[0];
+
+
+                    //获取事件
+                    var xhr2=new XMLHttpRequest();
+                    xhr5.open('get','https://devapi.qweather.com/v7/indices/1d?key=15b085fcfe9d42c6b60071ac519ac612&location='+toCntPercent+"type=0",true);
+                    xhr5.onreadystatechange=function(){
+                        if(xhr5.readyState==4&&xhr5.status==200){
+                            var text5=xhr.responseText;
+                            var jsonobj5 = JSON.parse(text1);
+
+
+                            var h1=document.querySelector("#five>li:nth-of-type(1)>em");
+                            h1.innerHTML="约会 适宜";
+
+                            var h2=document.querySelector("#five>li:nth-of-type(2)>em");
+                            h2.innerHTML="美发 较不适宜";
+
+                            var h3=document.querySelector("#five>li:nth-of-type(3)>em");
+                            h3.innerHTML="舒适度 "+jsonobj5[7].category;
+
+                            var h4=document.querySelector("#five>li:nth-of-type(4)>em");
+                            h4.innerHTML="路况 "+jsonobj5[9].category;
+
+                            var h5=document.querySelector("#five>li:nth-of-type(5)>em");
+                            h5.innerHTML="运动 "+jsonobj5[0].category;
+
+                            var h6=document.querySelector("#five>li:nth-of-type(6)>em");
+                            h6.innerHTML="逛街 "+jsonobj5[5].category;
+
+                            var h7=document.querySelector("#five>li:nth-of-type(7)>em");
+                            h7.innerHTML="钓鱼 "+jsonobj5[5].category;
+
+                            var h8=document.querySelector("#five>li:nth-of-type(8)>em");
+                            h8.innerHTML="防晒 "+jsonobj5[5].category;
+
+                            var h9=document.querySelector("#five>li:nth-of-type(9)>em");
+                            h9.innerHTML="雨伞 "+jsonobj5[7].category;
+
+                            var h10=document.querySelector("#five>li:nth-of-type(10)>em");
+                            h10.innerHTML="风寒 "+jsonobj5[2].category;
+
+                            var h11=document.querySelector("#five>li:nth-of-type(11)>em");
+                            h11.innerHTML="心情 "+jsonobj5[14].category;
+
+                            var h12=document.querySelector("#five>li:nth-of-type(12)>em");
+                            h12.innerHTML="猫咪 "+jsonobj5[7].category;
+
+                            var h13=document.querySelector("#five>li:nth-of-type(13)>em");
+                            h13.innerHTML="感冒 "+jsonobj5[8].category;
+
+                            var h14=document.querySelector("#five>li:nth-of-type(14)>em");
+                            h14.innerHTML="狗狗 "+jsonobj5[13].category;
+
+                            var h15=document.querySelector("#five>li:nth-of-type(15)>em");
+                            h15.innerHTML="广场舞" +jsonobj5[5].category;
+
+                            var h16=document.querySelector("#five>li:nth-of-type(16)>em");
+                            h16.innerHTML="放风筝 "+jsonobj5[7].category;
+
+                            var h17=document.querySelector("#five>li:nth-of-type(17)>em");
+                            h17.innerHTML="旅游 "+jsonobj5[5].category;
+
+                            var h18=document.querySelector("#five>li:nth-of-type(18)>em");
+                            h18.innerHTML="晨练 "+jsonobj5[5].category;
+
+                            var h19=document.querySelector("#five>li:nth-of-type(19)>em");
+                            h19.innerHTML="防晒 "+jsonobj5[13].category;
+
+                            var h20=document.querySelector("#five>li:nth-of-type(20)>em");
+                            h20.innerHTML="洗车 "+jsonobj5[1].category;
+
+                            var h21=document.querySelector("#five>li:nth-of-type(21)>em");
+                            h21.innerHTML="空气污染扩散 "+jsonobj5[9].category;
+
+                            var h22=document.querySelector("#five>li:nth-of-type(22)>em");
+                            h22.innerHTML="空调开启 "+jsonobj5[10].category;
+
+                            var h23=document.querySelector("#five>li:nth-of-type(23)>em");
+                            h23.innerHTML="息斯敏过敏 "+jsonobj5[6].category;
+
+                            var h24=document.querySelector("#five>li:nth-of-type(24)>em");
+                            h24.innerHTML="中暑 防护"+jsonobj5[11].category;
+
+                            var h25=document.querySelector("#five>li:nth-of-type(25)>em");
+                            h25.innerHTML="交通 "+jsonobj5[14].category;
+
+                            var h26=document.querySelector("#five>li:nth-of-type(26)>em");
+                            h26.innerHTML="划船 "+jsonobj5[5].category;
+
+                            var h27=document.querySelector("#five>li:nth-of-type(27)>em");
+                            h27.innerHTML="化妆 "+jsonobj5[12].category;
+
+                            var h28=document.querySelector("#five>li:nth-of-type(28)>em");
+                            h28.innerHTML="啤酒 不适宜";
+
+                            var h29=document.querySelector("#five>li:nth-of-type(29)>em");
+                            h29.innerHTML="夜生活 适宜";
+
+                            var h30=document.querySelector("#five>li:nth-of-type(30)>em");
+                            h30.innerHTML="穿衣 "+jsonobj5[2].category;
+
+                            var h31=document.querySelector("#five>li:nth-of-type(31)>em");
+                            h31.innerHTML="紫外线 "+jsonobj5[4].category;
+                        }       
+                    }
+                    xhr2.send();
+
+
+                    //获取每日 天气
+                    var xhr=new XMLHttpRequest();
+                    xhr.open('get','https://devapi.qweather.com/v7/weather/3d?key=15b085fcfe9d42c6b60071ac519ac612&location='+toCntPercent,true);
+                    xhr.onreadystatechange=function(){
+                        if(xhr.readyState==4&&xhr.status==200){
+                            var text1=xhr.responseText;
+                            var jsonobj1 = JSON.parse(text1).daily;
+                            console.log(jsonobj1);
+
+
+                            //part1
+                            var small=document.querySelector(".small");
+                            small.innerHTML=jsonobj1[0].textDay;
+
+                            var realtemp=document.querySelector(".realtemp");
+                            realtemp.innerHTML=jsonobj1[0].tempMax;
+
+                            var wind=document.querySelector(".wind");    
+                            wind.innerHTML=jsonobj1[0].windDirDay+""+jsonobj1[0].windScaleDay+"级 湿度"+jsonobj1[0].windScaleNight+"%";
+
+                            var care=document.querySelector(".care");
+                            if(jsonobj1[0].textDay<=0){
+                                care.innerHTML="天寒地冻穿暖和的吧";
+                            }else if(jsonobj1[0].textDay>0&&jsonobj1[0].textDay<10){
+                                care.innerHTML="天气阴冷穿暖和点吧";
+                            }else if(jsonobj1[0].textDay>17){
+                                care.innerHTML="冷热适宜，感觉很舒服";
+                            }else{
+                                care.innerHTML="略微偏凉，还是蛮舒适的";
+                            }
+
+                            var vs2=document.getElementById("s2");
+                            s2.innerHTML=jsonobj1[0].textDay+""+jsonobj1[0].iconDay;
+                            var s4=document.getElementById("s4");
+                            s4.innerHTML=jsonobj1[1].textDay+""+jsonobj1[1].iconDay;
+                            
+                            var myDate=new Date;
+                            var a=myDate.getDay();//获取当前星期X(0-6,0代表星期天)
+                            var date=["周日","周一","周二","周三","周四","周五","周六"];
+                            if(a==7){
+                                a=0;
+                            }
+                            if(a==0){
+                                a=7;
+                            }
+                            console.log(--a);
+                            var f1=document.querySelector("#sohard>li:nth-of-type(1)>.date");
+                            f1.innerHTML=date[--a];
+                            var f11=document.querySelector("#sohard>li:nth-of-type(1)>.wea1");
+                            f11.innerHTML=jsonobj1[1].textDay+""+jsonobj1[1].iconDay;
+
+                            a=myDate.getDay();
+                            console.log(a);
+                            var f2=document.querySelector("#sohard>li:nth-of-type(2)>.date");
+                            f2.innerHTML=date[a];
+                            var f21=document.querySelector("#sohard>li:nth-of-type(2)>.wea1");
+                            f21.innerHTML=jsonobj1[0].textDay+""+jsonobj1[0].iconDay;
+
+                            a++;
+                            if(a==7){
+                                a=0;
+                            }
+                            console.log(a);
+                            var f3=document.querySelector("#sohard>li:nth-of-type(3)>.date");
+                            f3.innerHTML=date[a];
+                            var f31=document.querySelector("#sohard>li:nth-of-type(3)>.wea1");
+                            f31.innerHTML=jsonobj1[1].textDay+""+jsonobj1[1].iconDay;
+
+                            a++;
+                            if(a==7){
+                                a=0;
+                            }
+                            console.log(a);
+                            var f4=document.querySelector("#sohard>li:nth-of-type(4)>.date");
+                            f4.innerHTML=date[a];
+                            var f41=document.querySelector("#sohard>li:nth-of-type(4)>.wea1");
+                            f41.innerHTML=jsonobj1[2].textDay+""+jsonobj1[2].iconDay;
+
+                            a++;
+                            if(a==7){
+                                a=0;
+                            }
+                            console.log(a);
+                            var f5=document.querySelector("#sohard>li:nth-of-type(5)>.date");
+                            f5.innerHTML=date[a];
+                            var f51=document.querySelector("#sohard>li:nth-of-type(5)>.wea1");
+                            f51.innerHTML=jsonobj1[0].textDay+""+jsonobj1[0].iconDay;
+
+                            a++;
+                            if(a==7){
+                                a=0;
+                            }
+                            console.log(a);
+                            var f6=document.querySelector("#sohard>li:nth-of-type(6)>.date");
+                            f6.innerHTML=date[a];
+                            var f61=document.querySelector("#sohard>li:nth-of-type(6)>.wea1");
+                            f61.innerHTML=jsonobj1[1].textDay+""+jsonobj1[1].iconDay;
+
+
+
+                            var f12=document.querySelector("#sohard>li:nth-of-type(1)>.wea2");
+                            f12.innerHTML=jsonobj1[1].iconNight+""+jsonobj1[1].textNight;
+
+                            var f22=document.querySelector("#sohard>li:nth-of-type(2)>.wea2");
+                            f22.innerHTML=jsonobj1[0].iconDay+""+jsonobj1[0].textDay;
+
+                            var f32=document.querySelector("#sohard>li:nth-of-type(3)>.wea2");
+                            f32.innerHTML=jsonobj1[1].iconNight+""+jsonobj1[1].textNight;
+
+                            var f42=document.querySelector("#sohard>li:nth-of-type(4)>.wea2");
+                            f42.innerHTML=jsonobj1[2].iconNight+""+jsonobj1[2].textNight;
+
+                            var f52=document.querySelector("#sohard>li:nth-of-type(5)>.wea2");
+                            f52.innerHTML=jsonobj1[0].iconNight+""+jsonobj1[0].textNight;
+
+                            var f62=document.querySelector("#sohard>li:nth-of-type(6)>.wea2");
+                            f62.innerHTML=jsonobj1[2].iconNight+""+jsonobj1[2].textNight;
+
+
+
+
+                            
+                            var wd=document.querySelector("#sohard>li:nth-of-type(1)>.winddir");
+                            wd.innerHTML=jsonobj1[1].windDirDay;
+                            var ws=document.querySelector("#sohard>li:nth-of-type(1)>windcale");
+                            ws.innerHTML=jsonobj1[1].windScaleDay;
+
+                            var wd=document.querySelector("#sohard>li:nth-of-type(2)>.winddir");
+                            wd.innerHTML=jsonobj1[0].windDirDay;
+                            var ws=document.querySelector("#sohard>li:nth-of-type(2)>windcale");
+                            ws.innerHTML=jsonobj1[0].windScaleDay;
+
+                            var wd=document.querySelector("#sohard>li:nth-of-type(3)>.winddir");
+                            wd.innerHTML=jsonobj1[1].windDirDay;
+                            var ws=document.querySelector("#sohard>li:nth-of-type(3)>windcale");
+                            ws.innerHTML=jsonobj1[1].windScaleDay;
+
+                            var wd=document.querySelector("#sohard>li:nth-of-type(4)>.winddir");
+                            wd.innerHTML=jsonobj1[2].windDirDay;
+                            var ws=document.querySelector("#sohard>li:nth-of-type(4)>windcale");
+                            ws.innerHTML=jsonobj1[2].windScaleDay;
+
+                            var wd=document.querySelector("#sohard>li:nth-of-type(5)>.winddir");
+                            wd.innerHTML=jsonobj1[0].windDirDay;
+                            var ws=document.querySelector("#sohard>li:nth-of-type(5)>windcale");
+                            ws.innerHTML=jsonobj1[0].windScaleDay;
+
+                            var wd=document.querySelector("#sohard>li:nth-of-type(6)>.winddir");
+                            wd.innerHTML=jsonobj1[2].windDirDay;
+                            var ws=document.querySelector("#sohard>li:nth-of-type(6)>windcale");
+                            ws.innerHTML=jsonobj1[2].windScaleDay;
+                        }
+                    }
+                    xhr.send();
+
+
+
+                    //part1
+                    //获取每日空气
+                    var xhr2=new XMLHttpRequest();
+                    xhr2.open('get','https://devapi.qweather.com/v7/air/now?key=15b085fcfe9d42c6b60071ac519ac612&location='+toCntPercent,true);
+                    xhr2.onreadystatechange=function(){
+                        if(xhr2.readyState==4&&xhr2.status==200){
+                            var text2=xhr2.responseText;
+                            var jsonobj2 = JSON.parse(text2).now;
+
+
+                            console.log(jsonobj2);
+                            var pm10=jsonobj2.pm10;
+                            console.log(pm10);
+                            var airindex=document.querySelector(".airindex");
+                            airindex.innerHTML=pm10+" "+jsonobj2.category;
+
+                            var jsonobj4 = JSON.parse(text2).station;
+                            console.log(jsonobj4);
+
+
+                            var p1=document.querySelector("#sohard>li:nth-of-type(1)>p");
+                            p1.innerHTML=jsonobj4[0].category;
+
+                            var p2=document.querySelector("#sohard>li:nth-of-type(2)>p");
+                            p2.innerHTML=jsonobj4[1].category;
+
+                            var p3=document.querySelector("#sohard>li:nth-of-type(3)>p");
+                            p3.innerHTML=jsonobj4[2].category;
+
+                            var p4=document.querySelector("#sohard>li:nth-of-type(4)>p");
+                            p4.innerHTML=jsonobj4[3].category;
+
+                            var p5=document.querySelector("#sohard>li:nth-of-type(5)>p");
+                            p5.innerHTML=jsonobj4[4].category;
+
+                            var p6=document.querySelector("#sohard>li:nth-of-type(6)>p");
+                            p6.innerHTML=jsonobj4[5].category;
+                        }
+                    }
+                    xhr2.send();
+
+
+                    var xhr3=new XMLHttpRequest();//天气
+                    xhr3.open('get','https://devapi.qweather.com/v7/weather/3d?key=15b085fcfe9d42c6b60071ac519ac612&location='+toCntPercent,true);
+                    xhr3.onreadystatechange=function(){
+                        if(xhr3.readyState==4&&xhr3.status==200){
+                            var text1=xhr.responseText;
+                            var jsonobj1 = JSON.parse(text1).daily;
+                            console.log(jsonobj1);
+                            
+
+                            var xhr2=new XMLHttpRequest();//空气
+                            xhr2.open('get','https://devapi.qweather.com/v7/air/now?key=15b085fcfe9d42c6b60071ac519ac612&location='+toCntPercent,true);
+                            xhr2.onreadystatechange=function(){
+                                if(xhr2.readyState==4&&xhr2.status==200){
+                                    var text2=xhr2.responseText;
+                                    var jsonobj2 = JSON.parse(text2).now;
+                                    console.log(jsonobj2);
+                                    var text1=xhr.responseText;
+                                    var jsonobj1 = JSON.parse(text1).daily;
+                                    console.log(jsonobj1);
+                                    var s1= document.getElementById("s1");
+                                    s1.innerHTML="今天"+jsonobj2.category+" "+jsonobj1[0].tempMin+"/"+jsonobj1[0].tempMax;
+                                    var s3= document.getElementById("s3");
+                                    s3.innerHTML="明天"+jsonobj2.category+" "+jsonobj1[1].tempMin+"/"+jsonobj1[1].tempMax;
+                                }
+                            }
+                            xhr2.send();
+                        }
+                    }
+                    xhr3.send();
+                }      
+            }
+            xhr1.send();
+    </script>
+</body>
+</html>
